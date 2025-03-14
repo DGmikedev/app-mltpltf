@@ -42,16 +42,19 @@ fn editar_txt(){
 
    let salidatxt: Result<(), std::io::Error> = 
    editor_txt::edit_txt( name, path, text );
-
-
    // println!("{:?}", salidatxt);
 }
+
+#[tauri::command]
+fn rx_data(data: Vec<Vec<String>>){
+    println!("{:?}", data);
+} 
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
         .plugin(tauri_plugin_opener::init())
-        .invoke_handler(tauri::generate_handler![greet])
+        .invoke_handler(tauri::generate_handler![rx_data])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

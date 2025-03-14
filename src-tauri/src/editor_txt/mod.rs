@@ -3,9 +3,10 @@ use std::io::{self, Write};
 use std::path::PathBuf;
 use std::io::Error;
 
+
 pub fn edit_txt(name: &str, path: &str, text:String)->io::Result<()>{
 
-    let mut dir_path:PathBuf          = PathBuf::from(path);
+    let mut dir_path:PathBuf      = PathBuf::from(path);
     let setdir: Result<(), Error> = fs::create_dir_all(&dir_path);
     
     match setdir{
