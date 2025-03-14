@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/css_cyborg.css" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tauri App</title>
+    <script type="module" src="/main.js" defer></script>
+  </head>
+
+  <body>
+
+    <div class="container py-4 px-2 ">
+
+   
+    
+
+      <div class="row">
+        <p class="text-success">INSERTE EL NUMERO DE RGISTROS</p>
+      </div>
+      <div class="row">
+        <div class="col-10">
+          <select class="form-select" id="exampleSelect1">
+            <option>10</option>
+            <option>200</option>
+            <option>800</option>
+            <option>1000</option>
+            <option>2000</option>
+            <option>5000</option>
+            <option>10000</option>
+          </select>
+        </div>
+       <div class="col-2">
+          <button type="button" class="btn btn-outline-success btn-lg" id="btn_insert">INSERTAR</button>
+          
+        </div>
+      </div>
+      <hr>
+
+      <div class="row">
+        <div class="col-4" >
+          <label for="name_col" class="form-label text-success">NOMBRE COLUMNA</label>
+          <input 
+          type="text" 
+          class="form-control" 
+          id="name_col" 
+          placeholder="nombre columna">
+        </div>
+
+        <div class="col-3" >
+          <label for="select_data" class="form-label text-success">TIPO DE DATO</label>
+          <select class="form-select" id="select_data">
+
+            <option value="N/A">SELECT</option>
+            <option disabled   >-- Fast data ----</option>
+            <option value="  ">NAME</option>
+            <option value="  ">NAME FULL</option>
+            <option value="  ">MIDDLE-LAST NAME</option>
+            <option value="  ">ADDRESS</option>
+            <option value="  ">EMAIL</option>
+            <option value="  ">PHONE</option>
+            <option value="  ">COUNTRY</option>
+            <option value="  ">CONTINENT</option>
+            <option disabled   >-------------</option>
+            <option value="INT">INT</option>
+            <option value="BIG">BIGINT</option>
+            <option disabled   >-------------</option>
+            <option value="TIN">TINYINT</option>
+            <option value="SMA">SMALLINT</option>
+            <option value="INT">INT</option>
+            <option value="BIG">BIGINT</option>
+            <option disabled   >-------------</option>
+            <option value="FLO">FLOAT</option>
+            <option value="DOU">DOUBLE</option>
+            <option value="DEC">DECIMAL (P, S)</option>
+            <option value="NUM">NUMERIC (P, S)</option>
+            <option disabled   >-------------</option>
+            <option value="CHA">CHAR (N)</option>
+            <option value="VAR">VARCHAR (N)</option>
+            <option value="TEX">TEXT</option>
+            <option disabled   >-------------</option>
+            <option value="DAT">DATE</option>
+            <option value="TIM">TIME</option>
+            <option value="DAT">DATETIME</option>
+            <option value="TMS">TIMESTAMP</option>
+            <option value="YEA">YEAR</option>
+            <option disabled   >-------------</option>
+            <option value="BIN">BINARY (N)</option>
+            <option value="VRB">VARBINARY (N)</option>
+            <option disabled   >-------------</option>
+            <option value="BOO">BOOLEAN</option>
+            <option value="JSO">JSON</option>
+            <option value="ENU">ENUM</option>
+            <option value="SET">SET</option>
+          </select>
+        </div>
+
+        <div class="col-2" >
+          <label for="cant_INI" class="form-label text-success">LONG INI</label>
+          <input 
+          type="number" 
+          class="form-control" 
+          id="cant_INI" 
+          placeholder="cant. datos"> 
+        </div>
+        <div class="col-2" >
+          <label for="cant_FIN" class="form-label text-success">LONG FINAL</label>
+          <input 
+          type="number" 
+          class="form-control" 
+          id="cant_FIN" 
+          placeholder="cant. datos">
+        </div>
+
+
+        <div class="col-1">
+          <label for="btn_add" class="form-label text-success">INSERTAR</label>
+          <button type="button" class="btn btn-outline-success btn-lg" id="btn_add">+</button>
+        </div>
+      </div>
+      <br>
+      <hr>
+    <table class="table">
+      <tr class="table-active">
+        <th style="width:60%;">Nombre</th>
+        <th style="width:35%;">Tipo</th>
+        <th style="width:5%;">Eliminar</th>
+      </tr>
+      <tr style="text-align: justify;">
+        <td></td>
+        <td></td>
+        <td>
+          <button class="btn btn-outline-danger btn-sm">Eliminar</button>
+        </td>
+      </tr>
+    </table>      
+
+    </div>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+
+
+</head>
+<body>
+
+    
