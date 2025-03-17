@@ -45,8 +45,42 @@ fn editar_txt(){
    // println!("{:?}", salidatxt);
 }
 
+
+fn create_header_script(schema:Vec<String>)->String{
+
+    let array_cols_name = vec!["user_name", "address", "phone"];
+    let bd = "bd_prueba";
+    let table = "usuarios";
+    let mut acm: usize = 0;
+
+    let mut head_script = format!("INSERT INTO {}.{} ( ", bd, table); 
+
+    for i in array_cols_name.iter(){
+        acm += 1;
+        head_script.push_str(i);
+        if acm == array_cols_name.len(){ head_script.push_str("") }
+        else{ head_script.push_str(",") }
+    }
+
+    head_script.push_str(" ) VALUES ");
+
+    println!("{}", head_script);
+
+    head_script
+
+}
+
 #[tauri::command]
 fn rx_data(data: Vec<Vec<String>>){
+
+    let mut cols_names: Vec<&str> = Vec::new();
+
+
+       
+    let mut script: String = create_header_script(data[0].clone());
+
+
+
     println!("{:?}", data);
 } 
 

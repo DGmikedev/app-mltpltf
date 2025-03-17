@@ -28,12 +28,17 @@ select_data.addEventListener('change',()=>{
   }
 });
 
+
+array_datos.push(["schema", "base_de_datos", "tabla"]);
+
+
 btn_add.addEventListener('click', ()=>{
   if( select_data.value == "N/A" ){
     window.alert("Selecciona un tipo de dato")
     return;
   } 
 
+  
   array_datos.push([name_col.value, select_data.value, cant_INI.value,cant_FIN.value])
 
   invoke("rx_data", {
