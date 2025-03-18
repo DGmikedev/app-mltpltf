@@ -46,11 +46,11 @@ fn editar_txt(){
 }
 
 
-fn create_header_script(schema:Vec<String>)->String{
+fn create_header_script(schema:Vec<String>, head_data: Vec<String>)->String{
 
-    let array_cols_name = vec!["user_name", "address", "phone"];
-    let bd = "bd_prueba";
-    let table = "usuarios";
+    let array_cols_name = schema; //vec!["user_name", "address", "phone"];
+    let bd: &String = &head_data[0];
+    let table: &String = &head_data[1];
     let mut acm: usize = 0;
 
     let mut head_script = format!("INSERT INTO {}.{} ( ", bd, table); 
@@ -64,7 +64,7 @@ fn create_header_script(schema:Vec<String>)->String{
 
     head_script.push_str(" ) VALUES ");
 
-    println!("{}", head_script);
+    // println!("{}", head_script);
 
     head_script
 
@@ -73,13 +73,11 @@ fn create_header_script(schema:Vec<String>)->String{
 #[tauri::command]
 fn rx_data(data: Vec<Vec<String>>){
 
-    let mut cols_names: Vec<&str> = Vec::new();
+    let mut cols_names: Vec<String> = Vec::new();
 
-
+    for i in 1..data.len(){ cols_names.push(data[i][0].clone()) }
        
-    let mut script: String = create_header_script(data[0].clone());
-
-
+    let mut script: String = create_header_script(cols_names, data[0].clone());
 
     println!("{:?}", data);
 } 

@@ -19,4 +19,5 @@ For Desktop development, run:
 For Android development, run:
   npm run tauri android dev
 ```
-
+ 
+Front: https://bootswatch.com/cyborg/

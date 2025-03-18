@@ -15,29 +15,29 @@
 
     <div class="container py-4 px-2 ">
 
-   
-    
+     
+      <div class="row">
+        <p class="text-success">AJUSTE DE BASE DE DATOS Y TABLA</p>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <input type="text" name="base_de_datos" id="base_de_datos" class="form-control" placeholder="base de datos">
+        </div>
+        <div class="col-4">
+          <input type="text" name="tabla" id="tabla" class="form-control" placeholder="tabla">
+        </div>
+        <div class="col-4">
+          <div class="row">
+            <div class="col-9"> <label class="form-check-label text-success" for="bd_on">DATOS AJUSTADOS</label> </div>
+            <div class="form-check form-switch col-3">
+              <input class="form-check-input" type="checkbox" id="bd_on" checked="">
+            </div>
+          </div>
+          <div >
+          </div>
+        </div>
+      </div>
 
-      <div class="row">
-        <p class="text-success">INSERTE EL NUMERO DE RGISTROS</p>
-      </div>
-      <div class="row">
-        <div class="col-10">
-          <select class="form-select" id="exampleSelect1">
-            <option>10</option>
-            <option>200</option>
-            <option>800</option>
-            <option>1000</option>
-            <option>2000</option>
-            <option>5000</option>
-            <option>10000</option>
-          </select>
-        </div>
-       <div class="col-2">
-          <button type="button" class="btn btn-outline-success btn-lg" id="btn_insert">INSERTAR</button>
-          
-        </div>
-      </div>
       <hr>
 
       <div class="row">
@@ -125,20 +125,45 @@
       </div>
       <br>
       <hr>
-    <table class="table">
+    <table class="table" id="table_rows">
       <tr class="table-active">
-        <th style="width:60%;">Nombre</th>
-        <th style="width:35%;">Tipo</th>
-        <th style="width:5%;">Eliminar</th>
+        <th style=" text-align:left; width:60%;">Nombre</th>
+        <th style=" text-align:left; width:35%;">Tipo</th>
+        <th style=" text-align:left; width:5%;">Longitud</th>
       </tr>
+      <tbody>
+
+      </tbody>
+      <!-- 
       <tr style="text-align: justify;">
         <td></td>
         <td></td>
         <td>
-          <button class="btn btn-outline-danger btn-sm">Eliminar</button>
+          <button class="btn btn-outline-danger btn-sm">Eliminar</button> 
         </td>
-      </tr>
+      </tr> -->
     </table>      
+    <hr>
+    <div class="row">
+      <p class="text-success">INSERTE EL NUMERO DE RGISTROS</p>
+    </div>
+    <div class="row">
+      <div class="col-10">
+        <select class="form-select" id="num_rows">
+          <option>10</option>
+          <option>200</option>
+          <option>800</option>
+          <option>1000</option>
+          <option>2000</option>
+          <option>5000</option>
+          <option>10000</option>
+        </select>
+      </div>
+     <div class="col-2">
+        <button type="button" class="btn btn-outline-success btn-lg" id="btn_insert">INSERTAR</button>
+        
+      </div>
+    </div>
 
     </div>
     <script src="./assets/js/popper.min.js"></script>
