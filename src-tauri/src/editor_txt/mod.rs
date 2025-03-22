@@ -1,22 +1,39 @@
-use std::fs::{self, File};
-use std::io::{self, Write};
-use std::path::PathBuf;
+// use std::os::windows::fs::OpenOptionsExt;
+use std::path::{ PathBuf, Path };
+use std::fs::create_dir_all;
+use std::fs::{ File, OpenOptions };
 use std::io::Error;
+use std::io::{BufWriter, Write};
 
 
-pub fn edit_txt(name: &str, path: &str, text:String)->io::Result<()>{
+pub fn create_directory(path:String)->bool{
 
-    let mut dir_path:PathBuf      = PathBuf::from(path);
-    let setdir: Result<(), Error> = fs::create_dir_all(&dir_path);
-    
-    match setdir{
-        Ok(ok) => dir_path.push(name),
-        _ => println!("Error al general archivo [{:?}]", dir_path),
+    let mut _path: PathBuf = PathBuf::from(path);
+    let dir: Result<(), Error> = create_dir_all(&_path);
+    match dir {
+        Ok(v) => return true,
+        _ =>  return false,
     }
+}
 
-    let doc = File::create(dir_path);
-    let _ = doc?.write_all(text.as_bytes());
+pub fn create_file(path: String, name: String)->Result<File, Error>{
 
+    let path_full: String = format!("{}{}",path, name);
+    let doc: Result<File, Error> = File::create(path_full);
+    match doc{
+        Ok(v) => return Ok(v),
+        _ => return doc,
+    }
+}
+
+pub fn insert_txt_by_ln(document: String, line: String) -> std::io::Result<()> { 
+
+    let path = Path::new(&document);
+    let _file = OpenOptions::new()
+    .create(false)
+    .append(true)
+    .open(path)?;
+    let mut writer = BufWriter::new(_file);
+    writeln!(writer, "{}", line)?;
     Ok(())
-} 
-
+}
