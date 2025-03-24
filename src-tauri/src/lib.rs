@@ -41,9 +41,7 @@ fn rx_data(datos: Vec<Vec<String>>)->String{
 
         // Se clonan los paths de directorios y documento
         //  cambiar en servidor y revisar las diagonales para LINUX o WINDOWS
-        // let mut path2exec = format!("C:/Users/El JEFE/Desktop/DESARROLLO/blueprints/rust_txt/{}{}", path.clone(), name.clone());
 
-        
         let current_dir: std::path::PathBuf = env::current_dir().expect("No se pudo obtener el directorio actual");
         
         let localpath = current_dir.to_string_lossy().into_owned();
@@ -106,7 +104,6 @@ fn rx_data(datos: Vec<Vec<String>>)->String{
 
         return "Inserción efectuada con exito".to_string();
 
-        
 } 
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
